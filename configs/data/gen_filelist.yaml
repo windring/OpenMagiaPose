@@ -1,0 +1,6 @@
+seed: 42
+anno_json_fn: data/video_annotations.json
+data_root_dir: data/raw/训练数据集
+train_filelist_path: data/train.txt
+val_filelist_path: data/val.txt
+test_filelist_path: data/test.txt

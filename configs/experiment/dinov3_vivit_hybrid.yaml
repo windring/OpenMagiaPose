@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - override /model: dinov3_vivit_hybrid
+  - override /data: dinov3_vivit
+
+num_batch_size: 64
+use_attention: false
+use_mamba: false
+use_hybrid: true
+use_pretrained_vivit: false
+
+tags: ["vivit_hybrid"]

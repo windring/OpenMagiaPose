@@ -1,0 +1,11 @@
+_target_: src.data.video_datamodule.VideoDataModule
+batch_size: ${num_batch_size} # Needs to be divisible by the number of devices (e.g., if in a distributed setup)
+num_workers: 12
+pin_memory: False
+train_filelist_path: ${paths.train_filelist_path}
+val_filelist_path: ${paths.val_filelist_path}
+test_filelist_path: ${paths.test_filelist_path}
+cache_dir: ${paths.vivit_processed_cache_dir}
+anno_json_fn: ${paths.anno_json_fn}
+image_processor_path: ${paths.image_processor_path}
+use_vivit_processor: ${use_pretrained_vivit}

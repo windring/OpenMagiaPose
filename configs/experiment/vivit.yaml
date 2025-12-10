@@ -1,0 +1,11 @@
+# @package _global_
+defaults:
+  - override /model: vivit
+  - override /data: vivit
+
+num_batch_size: 64
+use_attention: true
+use_mamba: false
+use_hybrid: false
+use_pretrained_vivit: true
+tags: ["vivit"]

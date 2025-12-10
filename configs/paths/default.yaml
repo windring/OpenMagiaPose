@@ -1,0 +1,27 @@
+# path to root directory
+# this requires PROJECT_ROOT environment variable to exist
+# you can replace it with "." if you want the root to be the current working directory
+root_dir: ${oc.env:PROJECT_ROOT}
+
+# path to data directory
+data_dir: ${paths.root_dir}/data/
+models_dir: ${paths.root_dir}/models/
+
+# path to logging directory
+log_dir: ${paths.root_dir}/logs/
+
+# path to output directory, created dynamically by hydra
+# path generation pattern is specified in `configs/hydra/default.yaml`
+# use it to store all files generated during the run, like ckpts and metrics
+output_dir: ${hydra:runtime.output_dir}
+
+# path to working directory
+work_dir: ${hydra:runtime.cwd}
+
+train_filelist_path: ${paths.data_dir}/train.txt
+val_filelist_path: ${paths.data_dir}/val.txt
+test_filelist_path: ${paths.data_dir}/test.txt
+vivit_processed_cache_dir: ${paths.data_dir}/vivit_processed_cache
+dinov3_vit7b_pca_cache_dir: ${paths.data_dir}/vit7b_pca_cache
+anno_json_fn: ${paths.data_dir}/video_annotations.json
+image_processor_path: ${paths.models_dir}/vivit-b-16x2-kinetics400

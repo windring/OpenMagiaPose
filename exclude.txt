@@ -1,0 +1,15 @@
+*/cache/*
+*.pyc
+*/__pycache__/*
+*/logs/*
+*.log
+.git/*
+.conda/*
+.DS_Store
+models/vivit-b-16x2-kinetics400/.git/*
+debug_output/*
+logs/*
+outputs/*
+data/raw/*
+data/train_video_cache/*
+data/val_video_cache/*

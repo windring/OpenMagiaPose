@@ -1,0 +1,29 @@
+_target_: src.models.vivit_module.VivitLitModule
+
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: true
+  betas: [0.9, 0.999]
+  eps: 1e-9
+  lr: 2e-4
+  weight_decay: 0.0
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+  factor: 0.1
+  patience: 10
+
+num_classes: 15
+cls_weight: 0.8
+reg_weight: 1.2
+vivit_model_pretrained: "models/vivit-b-16x2-kinetics400"
+
+use_attention: ${use_attention}
+use_mamba: ${use_mamba}
+use_hybrid: ${use_hybrid}
+use_pretrained_vivit: ${use_pretrained_vivit}
+
+# compile model for faster training with pytorch 2.0
+compile: false
